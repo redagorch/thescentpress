@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Découvrez Votre Fragrance Idéale</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Banner Section -->
+    <section id="banner" class="section">
+        <div class="container">
+            <div class="perfume-image animate__animated animate__fadeIn">
+                <img src="la-vie-est-belle-lancome-1.jpg" alt="Flacon de parfum luxueux">
+            </div>
+            <h1 class="animate__animated animate__fadeInUp">Découvrez la fragrance qui vous ressemble !</h1>
+            <p class="subtitle animate__animated animate__fadeInUp">Participez à notre jeu et tentez votre chance !</p>
+            <button id="startButton" class="cta-button animate__animated animate__fadeInUp">Commencer le jeu</button>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="section hidden">
+        <div class="container">
+            <div class="question-container" id="question1">
+                <h2>Question 1</h2>
+                <p>La parfumerie et le monde de l’olfaction t’intéressent ?</p>
+                <div class="buttons">
+                    <button class="yes-btn">Oui</button>
+                    <button class="no-btn">Non</button>
+                </div>
+            </div>
+
+            <div class="question-container hidden" id="question2">
+                <h2>Question 2</h2>
+                <p>Tu veux te cultiver de façon ludique ?</p>
+                <div class="buttons">
+                    <button class="yes-btn">Oui</button>
+                    <button class="no-btn">Non</button>
+                </div>
+            </div>
+
+            <div class="question-container hidden" id="question3">
+                <h2>Question 3</h2>
+                <p>Tu voudrais connaître toute l’actualité et les coulisses de la parfumerie ?</p>
+                <div class="buttons">
+                    <button class="yes-btn">Oui</button>
+                    <button class="no-btn">Non</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="form" class="section hidden">
+        <div class="container">
+            <h2>Une surprise vous attend !</h2>
+            <form id="leadForm">
+                <div class="form-group">
+                    <input type="text" id="nom" name="nom" required placeholder="Nom">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="prenom" name="prenom" required placeholder="Prénom">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="adresse" name="adresse" required placeholder="Adresse">
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="telephone" name="telephone" required placeholder="Téléphone">
+                </div>
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Je souhaite recevoir des offres exclusives et des invitations aux événements.</label>
+                </div>
+                <button type="submit" class="submit-button">Envoyer et tenter ma chance !</button>
+            </form>
+			<script>
+			document.getElementById("myForm").addEventListener("submit", async function(event) {
+				event.preventDefault();
+
+				const formData = new FormData(this);
+				const data = Object.fromEntries(formData.entries());
+
+				const response = await fetch("http://localhost:3000/save", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(data),
+				});
+
+				if (response.ok) {
+					alert("Données enregistrées !");
+				} else {
+					alert("Erreur lors de l'enregistrement.");
+				}
+			});
+			</script>
+        </div>
+    </section>
+
+    <!-- Confirmation Section -->
+    <section id="confirmation" class="section hidden">
+        <div class="container">
+            <h2>Merci pour votre participation !</h2>
+            <p>Vérifiez vos emails pour découvrir votre surprise.</p>
+            <div class="social-share">
+                <p>Partagez l'expérience :</p>
+                <button class="share-button" data-platform="facebook">Facebook</button>
+                <button class="share-button" data-platform="twitter">Twitter</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html> 
