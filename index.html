@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSP - Découvrez votre fragrance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header avec logo en texte -->
+    <header>
+        <a href="#" id="home-link">
+            <img src="TSP logo.jpeg" alt="TSP" class="logo-image">
+        </a>
+    </header>
+
+    <!-- Section Slider -->
+    <section id="slider-section">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide active" style="background-image: url('iStock-1485161265.jpg')"></div>
+                <div class="slide" style="background-image: url('iStock-465559373.jpg')"></div>
+                <div class="slide" style="background-image: url('iStock-1435220719.jpg')"></div>
+                <div class="slide" style="background-image: url('iStock-1386867384.jpg')"></div>
+            </div>
+            <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="hero-content">
+            <h1>Plongez dans un nouvel univers olfactif</h1>
+            <button id="start-game" class="cta-button">Entrer ici</button>
+        </div>
+    </section>
+
+    <!-- Section Jeu -->
+    <section id="game-section" class="hidden">
+        <div class="question" data-question="1">
+            <h2>La parfumerie et le monde de l'olfaction t'intéressent ?</h2>
+            <div class="buttons">
+                <button class="yes-btn">Oui</button>
+                <button class="no-btn">Non</button>
+            </div>
+            <p class="error-message"></p>
+        </div>
+        <div class="question hidden" data-question="2">
+            <h2>Tu veux te cultiver de façon ludique ?</h2>
+            <div class="buttons">
+                <button class="yes-btn">Oui</button>
+                <button class="no-btn">Non</button>
+            </div>
+            <p class="error-message"></p>
+        </div>
+        <div class="question hidden" data-question="3">
+            <h2>Tu voudrais connaître toute l'actualité et les coulisses de la parfumerie ?</h2>
+            <div class="buttons">
+                <button class="yes-btn">Oui</button>
+                <button class="no-btn">Non</button>
+            </div>
+            <p class="error-message"></p>
+        </div>
+    </section>
+
+    <!-- Section Formulaire -->
+    <section id="form-section" class="hidden">
+        <form id="lead-form">
+            <div class="form-group">
+                <label for="nom">Nom </label>
+                <input type="text" name="nom" id="nom" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="prenom">Prénom </label>
+                <input type="text" name="prenom" id="prenom" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email </label>
+                <input type="email" name="email" id="email" 
+                       pattern="[^@\s]+@[^@\s]+\.(fr|com|net|org|eu)$"
+                       title="Veuillez entrer une adresse email valide avec une extension .fr, .com, .net, .org ou .eu"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="societe">Société</label>
+                <input type="text" name="societe" id="societe">
+            </div>
+            
+            <div class="form-group">
+                <label for="adresse">Adresse</label>
+                <input type="text" name="adresse" id="adresse">
+            </div>
+            
+            <div class="form-group">
+                <label for="telephone">Numéro de téléphone</label>
+                <input type="tel" name="telephone" id="telephone"
+                       pattern="^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$"
+                       title="Veuillez entrer un numéro de téléphone français valide">
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" name="newsletter" id="newsletter">
+                <label for="newsletter">J'ai hâte de voir la suite, et j'accepte de recevoir les informations exclusives de TSP</label>
+            </div>
+
+            <button type="submit" class="cta-button">Envoyer !</button>
+        </form>
+    </section>
+
+    <!-- Section Confirmation -->
+    <section id="confirmation-section" class="hidden">
+        <div class="confirmation-content">
+            <h2>Merci pour votre participation !</h2>
+            <p>Vérifiez vos emails pour découvrir votre surprise.</p>
+            <a href="https://www.instagram.com/elle_au_parfum/" class="instagram-btn" target="_blank">
+                <i class="fab fa-instagram"></i> Suivez-nous sur Instagram
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Informations</h3>
+                <a href="#" class="legal-link">Mentions légales</a>
+                <a href="#" class="privacy-link">Politique de protection des données</a>
+            </div>
+            <div class="footer-section">
+                <h3>Nous contacter</h3>
+                <p><i class="fas fa-phone"></i> 06 98 39 00 33</p>
+                <p><i class="fas fa-map-marker-alt"></i> 80 rue de Paris, Clichy</p>
+                <p>Le service client est ouvert du Lundi au Vendredi<br>
+                   de 10h à 12h et de 14h à 18h (hors jours fériés)</p>
+            </div>
+            <div class="footer-section">
+                <h3>Nous suivre</h3>
+                <a href="https://www.instagram.com/elle_au_parfum/" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Ajout des modales pour les mentions légales et politique de confidentialité -->
+    <div id="legal-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Mentions Légales</h2>
+            <div class="legal-content">
+                <h3>1. Informations éditeur</h3>
+                <p>Ce site est la propriété de TSP.<br>
+                Siège social : 80 rue de paris, Clichy</p>
+                
+                <h3>2. Informations générales</h3>
+                <p>Conformément à l'article 27 de la loi Informatique et libertés du 6 février 1978, vous disposez d'un droit d'accès, de modification et de suppression des données vous concernant.</p>
+                
+                <h3>3. Informations juridiques</h3>
+                <p>L'utilisateur du site s'engage à respecter les règles de propriété intellectuelle des contenus présentés.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="privacy-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Politique de protection des données</h2>
+            <div class="privacy-content">
+                <p>Vos données personnelles sont collectées et traitées dans le respect du RGPD.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
